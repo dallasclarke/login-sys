@@ -9,9 +9,15 @@
         $email = $_POST['email'];
 
         // Instantiate Signup Controller Class
+        include "../classes/db.php";
         include "../classes/Signup.php";
         include "../classes/Signup-Controller.php";
 
         $signup = new SignupController($uid, $pwd, $pwdRepeat, $email);
 
+        // Running error handlers
+        $signup->signupUser();
+
+        // Going to back to front page
+        header("location: ../index.php?error=none");
     }

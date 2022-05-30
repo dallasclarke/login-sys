@@ -2,7 +2,7 @@
 
     class Db {
 
-        private function conn() {
+        protected function conn() {
             try {
                 $username = "root";
                 $password = "";
